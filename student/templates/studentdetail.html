@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container d-flex justify-content-center mt-4">
+<div class="card"  style="width: 26rem;" >
+ 
+  <div class="card-body">
+    <p class="card-text"> Name: {{ student.name}}</p>
+    <p class="card-text"> Student Code: {{ student.student_code}}</p>
+    <p class="card-text"> Course Name: {{ student.course}}</p>
+    <p class="card-text"> Course Code: {{ student.course_code}}</p>
+    <p class="card-text"> Major Subject: {{ student.major_subject}}</p>
+   
+  </div>
+  <div class="card footer">
+ <div class="btn-group gap-4" role="group" >
+  <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+  <a href="{% url 'update_student' student.id  %}" class="btn btn-success">Update</a>
+  <a href="{% url 'student_delete' student.id %}" class="btn btn-danger">Delete</a>
+</div>
+  </div>
+</div>
+</div>
+
+{% endblock %}
